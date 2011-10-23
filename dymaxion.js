@@ -281,7 +281,7 @@
 
     // Moves around all pieces to random positions
     shuffle: function () {
-      
+
       var used = [],
         // Separate the equilaterals and isosceles because triangles of different
         // types cannot be swapped with each other (different shaped images)
@@ -291,7 +291,7 @@
 
       each(this.pieces, function (piece, id) {
         var tri = tri_map[id], pos, avail;
-        
+
         if (tri.type === tri_types.equal || tri.type === tri_types.isos) {
 
           // Find the positions that havent been used yet
@@ -402,7 +402,7 @@
             this.onerror = null;
             image = null;
             monitor.done(id);
-          }
+          };
         };
 
         each(this.puzzles.concat('intro'), function (puzzle) {
@@ -1008,7 +1008,7 @@
           stroke: 'white',
           stroke_width: 1,
           fill: 'gray',
-          alpha: (i + 1) / l 
+          alpha: (i + 1) / l
         });
 
         spinner.addItem(dot);
@@ -1196,7 +1196,7 @@
             baseline: 'middle',
             align: 'center',
             fill: '#ffffff'
-          }
+          };
         };
 
       content.stroke = false;
@@ -1299,7 +1299,7 @@
             b = [right, bottom];
             c = [s / 2, top];
           }
-        } else if(tri_map[id].type === tri_types.isos) {
+        } else if (tri_map[id].type === tri_types.isos) {
           if (tri_map[id].flipped) {
             a = [s * (1 - r.isos_left), s * (1 - r.isos_top)];
             b = [s * (1 - r.isos_left), s * r.isos_bottom_left];
@@ -1413,7 +1413,7 @@
       done_rotate3 = function () {
         monitor.done(this.tag + '_rotate');
       };
-      
+
       each(this.board.items, function (image) {
         var tri = tri_map[image.tri_id];
 
@@ -1467,7 +1467,7 @@
       done_rotate = function () {
         monitor.done(this.tag + '_rotate');
       };
-      
+
       each(this.board.items, function (item) {
         item.moveTo(
           this.speeds.move_outside,
@@ -1687,10 +1687,6 @@
       return this;
     },
 
-    hint: function (text) {
-      
-    },
-
     // Gets called before animations begin, disables buttons
     disableUI: function () {
       this.canvas.setEnableBinds(false);
@@ -1705,7 +1701,7 @@
 
     // Game complete, shows full picture
     done: function (puzzle, next, context) {
-      var that = this, after_bg,
+      var that = this, after_bg, bg,
         monitor = new AsyncMonitor(['menu', 'popup'], next, context);
 
       each(this.board.items, function (item) {
@@ -1761,7 +1757,7 @@
         after_bg = null;
       };
 
-      var bg = new gyudon.Item.Image({
+      bg = new gyudon.Item.Image({
         frame: new gyudon.Frame(
           this.board.move.x,
           this.board.move.y,
@@ -1783,6 +1779,8 @@
       });
 
       this.canvas.addItem(bg).moveItemToBack(bg);
+
+      bg = null;
 
       return this;
     },
