@@ -143,11 +143,12 @@
         puzzle_nara2: 'central Nara and do not mind being pet. They do however try to eat your food.',
         puzzle_kiyomizu1: 'Kiyomizu-dera is a temple in Kyoto and is a UNESCO World Heritage site. It is',
         puzzle_kiyomizu2: 'situated ontop of a large hill, with an amazing view in both Spring and Autumn.',
-        about_summary1: 'Dymaxion Puzzle is a simple puzzle game where you drag and drop puzzle pieces around the screen and swap',
-        about_summary2: 'pieces until they match the original picture. My name is Aiham Hammami and I enjoy making web apps using Javascript',
-        about_summary3: 'and new HTML5 APIs. This game is my submission for the Open Call for Google Developer Day 2011. All photos used',
-        about_summary4: 'were taken by me while I was traveling around Japan. I also created it to display the capabilities of Gyudon.js, my',
-        about_summary5: 'object oriented animated canvas library. Please report bugs to aiham@aiham.net.',
+        about_summary1: 'Dymaxion Puzzle is a simple puzzle game where you drag and drop puzzle pieces around the screen',
+        about_summary2: 'and swap pieces until they match the original picture. My name is Aiham Hammami and I enjoy',
+        about_summary3: 'making web apps using Javascript and new HTML5 APIs. This game is my submission for the Open',
+        about_summary4: 'Call for Google Developer Day 2011. All photos used were taken by me while I was traveling around',
+        about_summary5: 'Japan. I also created it to display the capabilities of Gyudon.js, my object oriented animated',
+        about_summary6: 'canvas library. Please report bugs to aiham@aiham.net.',
         load_status: 'Loaded LOADED of TOTAL images.',
         load_status_error: 'Loaded LOADED of TOTAL images. ERROR images could not be loaded.',
         load_success: 'Loaded successfully.',
@@ -164,21 +165,12 @@
         congrats: 'おめでとうございます！',
         puzzle_miyajima1: '広島の有名な厳島です。',
         puzzle_miyajima2: ' ',
-        puzzle_himeji1: '姫路城',
+        puzzle_himeji1: '姫路城です。',
         puzzle_himeji2: ' ',
-        puzzle_nara1: '奈良のシカ',
+        puzzle_nara1: '奈良のシカです。',
         puzzle_nara2: ' ',
-        puzzle_kiyomizu1: '京都の清水寺',
-        puzzle_kiyomizu2: ' ',
-        about_summary1: 'Dymaxion Puzzle is a simple puzzle game where you drag and drop puzzle pieces around the screen and swap',
-        about_summary2: 'pieces until they match the original picture. My name is Aiham Hammami and I enjoy making web apps using Javascript',
-        about_summary3: 'and new HTML5 APIs. This game is my submission for the Open Call for Google Developer Day 2011. All photos used',
-        about_summary4: 'were taken by me while I was traveling around Japan. I also created it to display the capabilities of Gyudon.js, my',
-        about_summary5: 'object oriented animated canvas library. Please report bugs to aiham@aiham.net.',
-        load_status: 'Loaded LOADED of TOTAL images.',
-        load_status_error: 'Loaded LOADED of TOTAL images. ERROR images could not be loaded.',
-        load_success: 'Loaded successfully.',
-        load_fail: 'Some files were unable to load so the game might not run correctly. Please refresh if that is the case.'
+        puzzle_kiyomizu1: '京都の清水寺です。',
+        puzzle_kiyomizu2: ' '
       }
     }
 
@@ -1187,7 +1179,7 @@
     },
 
     createAboutContent: function (next, context, is_preload) {
-      var width = 700, height = is_preload ? 400 : 264,
+      var width = 700, height = is_preload ? 440 : 304,
         content = new gyudon.Item.Rect({
           frame: new gyudon.Frame(0, 0, width, height)
         }),
@@ -1214,7 +1206,8 @@
         addItem(new gyudon.Item.Text(textOptions('about_summary2', 90))).
         addItem(new gyudon.Item.Text(textOptions('about_summary3', 130))).
         addItem(new gyudon.Item.Text(textOptions('about_summary4', 170))).
-        addItem(new gyudon.Item.Text(textOptions('about_summary5', 210)));
+        addItem(new gyudon.Item.Text(textOptions('about_summary5', 210))).
+        addItem(new gyudon.Item.Text(textOptions('about_summary6', 250)));
 
       this.addPopupView(options);
 
@@ -1230,7 +1223,7 @@
 
         content.addItem(new gyudon.Item.Text({
           tag: 'load_status',
-          coord: new gyudon.Coord(width / 2, 350),
+          coord: new gyudon.Coord(width / 2, 390),
           baseline: 'middle',
           align: 'center',
           fill: '#ffffff'
