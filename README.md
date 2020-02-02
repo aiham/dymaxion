@@ -1,3 +1,5 @@
+**Note:** Not maintained
+
 # Dymaxion Puzzle Game
 
 This puzzle game was my submission for the Open Call for Google Developer Day 2011 HTML 5 Competition https://sites.google.com/site/opencallxhtml5/ I was chosen as a finalist to attend Google Developer Day Tokyo 2011.
